@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* =========================
+   BASE THEME
+   ========================= */
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+
+  --primary: #1E3A8A;
+  --secondary: #64748B;
+
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================
+   TAILWIND BRIDGE
+   ========================= */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --font-sans: var(--font-sans);
+}
+
+/* =========================
+   GLOBAL
+   ========================= */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
