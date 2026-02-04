@@ -101,8 +101,6 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           />
-
-
           {/* Carte Email */}
           <Card
             title="Email"
