@@ -39,7 +39,7 @@ export default function Home() {
           USL Arts Martiaux
         </h1>
         <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-xl mx-auto">
-          Description courte du club
+          Respect, Discipline, Honneur, Amitié...
         </p>
       </section>
 
@@ -64,7 +64,7 @@ export default function Home() {
               <>
                 <p>Dimanche 19 Avril 2026</p>
                 <p>Vide-grenier organisé par l&apos;USL Arts Martiaux.</p>
-                <p>Téléchargez le bulletin d&apos;inscription.</p>
+                <p>Téléchargez le bulletin d&apos;inscription ici.</p>
               </>
             }
             href="/showpdf"
