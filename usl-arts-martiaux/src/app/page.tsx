@@ -58,7 +58,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full px-2 sm:px-0">
           <Card
-            imgSrc="/assets/logo.png"
+            imgSrc="/assets/affiche_vide_grenier.png"
             title="Vide-grenier"
             description={
               <>
