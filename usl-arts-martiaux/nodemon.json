@@ -1,0 +1,6 @@
+{
+  "watch": ["next.config.ts", ".env", "prisma/schema.prisma"],
+  "ignore": ["src/**", "node_modules/**", ".next/**", "prisma/migrations/**"],
+  "exec": "next dev",
+  "ext": "ts,env,prisma"
+}

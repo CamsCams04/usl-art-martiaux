@@ -1,124 +1,70 @@
-"use client";
-
-import Card from "@/components/card/card";
-import { useEffect, useRef, useState } from "react";
-import { FaFacebookF, FaEnvelope } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Home() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  const [contactVisible, setContactVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setVisible(true),
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setContactVisible(true),
-      { threshold: 0.2 }
-    );
-
-    if (contactRef.current) observer.observe(contactRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className="w-full max-w-6xl flex flex-col gap-16 px-4 sm:px-6 md:px-8">
-
-      {/* HERO */}
-      <section className="w-full text-center py-12 sm:py-16 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 shadow-sm">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800">
-          USL Arts Martiaux
-        </h1>
-        <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-xl mx-auto">
-          Respect, Discipline, Honneur, Amitié...
-        </p>
-      </section>
-
-      {/* ACTUALITÉS */}
-      <section
-        ref={sectionRef}
-        className={`flex flex-col items-center transition-all duration-700 ease-out
-          ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-        `}
-      >
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center">
-          Actualités du club
-        </h2>
-
-        <div className="w-16 h-1 bg-slate-500 rounded-full mt-3 mb-10" />
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full px-2 sm:px-0">
-          <Card
-            imgSrc="/assets/affiche_vide_grenier.png"
-            title="Vide-grenier"
-            description={
-              <>
-                <p>Dimanche 19 Avril 2026</p>
-                <p>Vide-grenier organisé par l&apos;USL Arts Martiaux.</p>
-                <p>Téléchargez le bulletin d&apos;inscription ici.</p>
-              </>
-            }
-            href="/showpdf"
-          />
+    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <Image
+          className="dark:invert h-5 w-[100px]"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={100}
+          height={20}
+          priority
+        />
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            To get started, edit the{" "}
+            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
+              page.tsx
+            </code>{" "}
+            file.
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Looking for a starting point or more instructions? Head over to{" "}
+            <a
+              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Templates
+            </a>{" "}
+            or the{" "}
+            <a
+              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Learning
+            </a>{" "}
+            center.
+          </p>
         </div>
-      </section>
-
-      {/* CONTACT */}
-      <section
-        ref={contactRef}
-        className={`flex flex-col items-center transition-all duration-700 ease-out
-          ${contactVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-        `}
-      >
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 text-center">
-          Retrouvez-nous
-        </h2>
-
-        <div className="w-16 h-1 bg-slate-500 rounded-full mt-3 mb-10" />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full px-2 sm:px-0">
-          {/* Carte Facebook */}
-          <Card
-            title="Facebook"
-            description={
-              <div className="flex items-center justify-center">
-                <FaFacebookF className="text-blue-600 mr-2 inline-block" />
-                <p className="text-slate-700 hover:text-slate-900 transition-colors">
-                  Suivez-nous sur Facebook
-                </p>
-              </div>
-            }
-            href="https://www.facebook.com/p/Page-Usl-Arts-Martiaux-100054558665152/"
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <a
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
-          />
-          {/* Carte Email */}
-          <Card
-            title="Email"
-            description={
-              <div className="flex items-center justify-center">
-                <FaEnvelope className="text-slate-700 mr-2 inline-block" />
-                <p
-                  className="text-slate-700 hover:text-slate-900 transition-colors"
-                >
-                  uslartsmartiaux@gmail.com
-                </p>
-              </div>
-            }
-            href="mailto:uslartsmartiaux@gmail.com"
-          />
+          >
+            <Image
+              className="dark:invert h-[14px] w-4"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={16}
+              height={14}
+            />
+            Deploy Now
+          </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
+          </a>
         </div>
-      </section>
-
+        <p> TEST </p>
+      </main>
     </div>
   );
 }
