@@ -58,13 +58,12 @@ export default function Home() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full px-2 sm:px-0">
           <Card
-            imgSrc="/assets/affiche_vide_grenier.png"
-            title="Vide-grenier"
+            imgSrc="/assets/Flyers_Ravioles.png"
+            title="Vente de raviole"
             description={
               <>
-                <p>Dimanche 19 Avril 2026</p>
-                <p>Vide-grenier organisé par l&apos;USL Arts Martiaux.</p>
-                <p>Téléchargez le bulletin d&apos;inscription ici.</p>
+                <p>Vente de Raviole du Dauphiné par l&apos;USL Arts Martiaux.</p>
+                <p>Téléchargez le bulletin de commande.</p>
               </>
             }
             href="/showpdf"
